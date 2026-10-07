@@ -4,6 +4,7 @@
 __pycache__/
 .venv/
 node_modules/
-benchmark/results/*.json
+benchmark/results/benchmark_*.json
+!benchmark/results/latest.json
 !benchmark/results/.gitkeep
 benchmark/results/archive/

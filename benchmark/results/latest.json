@@ -1,0 +1,169 @@
+{
+  "timestamp_utc": "20261007T062611Z",
+  "api_base": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "modes": {
+    "baseline": [
+      {
+        "id": "git_log_summary",
+        "mode": "baseline",
+        "fixture_bytes": 58189,
+        "sent_bytes": 58189,
+        "context_reduction_pct": 0.0,
+        "preprocess_ms": 0,
+        "latency_ms": 4960,
+        "prompt_tokens": 22416,
+        "completion_tokens": 1198,
+        "total_tokens": 23614,
+        "quality": {
+          "passed": true,
+          "details": {
+            "commit_count": {
+              "expected": 500,
+              "actual": 500,
+              "ok": true
+            },
+            "top_author": {
+              "expected": "bob",
+              "actual": "bob",
+              "ok": true
+            }
+          }
+        },
+        "answer_preview": "{\"commit_count\": 500, \"top_author\": \"bob\"}"
+      },
+      {
+        "id": "json_errors",
+        "mode": "baseline",
+        "fixture_bytes": 22992,
+        "sent_bytes": 22992,
+        "context_reduction_pct": 0.0,
+        "preprocess_ms": 0,
+        "latency_ms": 11120,
+        "prompt_tokens": 10303,
+        "completion_tokens": 3094,
+        "total_tokens": 13397,
+        "quality": {
+          "passed": true,
+          "details": {
+            "error_count": {
+              "expected": 142,
+              "actual": 142,
+              "ok": true
+            }
+          }
+        },
+        "answer_preview": "{\"error_count\": 142}"
+      },
+      {
+        "id": "code_count",
+        "mode": "baseline",
+        "fixture_bytes": 1163,
+        "sent_bytes": 1163,
+        "context_reduction_pct": 0.0,
+        "preprocess_ms": 0,
+        "latency_ms": 2370,
+        "prompt_tokens": 539,
+        "completion_tokens": 531,
+        "total_tokens": 1070,
+        "quality": {
+          "passed": true,
+          "details": {
+            "py_files": {
+              "expected": 50,
+              "actual": 50,
+              "ok": true
+            }
+          }
+        },
+        "answer_preview": "{\"py_files\": 50}"
+      }
+    ],
+    "stack": [
+      {
+        "id": "git_log_summary",
+        "mode": "stack",
+        "fixture_bytes": 58189,
+        "sent_bytes": 63,
+        "context_reduction_pct": 99.89,
+        "preprocess_ms": 0,
+        "latency_ms": 906,
+        "prompt_tokens": 140,
+        "completion_tokens": 78,
+        "total_tokens": 218,
+        "quality": {
+          "passed": true,
+          "details": {
+            "commit_count": {
+              "expected": 500,
+              "actual": 500,
+              "ok": true
+            },
+            "top_author": {
+              "expected": "bob",
+              "actual": "bob",
+              "ok": true
+            }
+          }
+        },
+        "answer_preview": "{\"commit_count\":500,\"top_author\":\"bob\"}"
+      },
+      {
+        "id": "json_errors",
+        "mode": "stack",
+        "fixture_bytes": 22992,
+        "sent_bytes": 34,
+        "context_reduction_pct": 99.85,
+        "preprocess_ms": 0,
+        "latency_ms": 1138,
+        "prompt_tokens": 116,
+        "completion_tokens": 109,
+        "total_tokens": 225,
+        "quality": {
+          "passed": true,
+          "details": {
+            "error_count": {
+              "expected": 142,
+              "actual": 142,
+              "ok": true
+            }
+          }
+        },
+        "answer_preview": "{\"error_count\": 142}"
+      },
+      {
+        "id": "code_count",
+        "mode": "stack",
+        "fixture_bytes": 1163,
+        "sent_bytes": 35,
+        "context_reduction_pct": 96.99,
+        "preprocess_ms": 0,
+        "latency_ms": 1035,
+        "prompt_tokens": 117,
+        "completion_tokens": 67,
+        "total_tokens": 184,
+        "quality": {
+          "passed": true,
+          "details": {
+            "py_files": {
+              "expected": 50,
+              "actual": 50,
+              "ok": true
+            }
+          }
+        },
+        "answer_preview": "{\"py_files\": 50}"
+      }
+    ]
+  },
+  "comparison": {
+    "baseline_total_tokens": 38081,
+    "stack_total_tokens": 627,
+    "token_savings_pct": 98.35,
+    "baseline_total_latency_ms": 18450,
+    "stack_total_latency_ms": 3079,
+    "baseline_quality_pass": 3,
+    "stack_quality_pass": 3,
+    "scenarios": 3
+  }
+}
