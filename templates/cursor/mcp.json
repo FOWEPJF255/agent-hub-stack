@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "context-mode": {
+      "command": "context-mode"
+    },
+    "agent-hub-stack": {
+      "command": "python",
+      "args": [
+        "__AGENT_HUB_STACK_MCP_SERVER__"
+      ]
+    }
+  }
+}

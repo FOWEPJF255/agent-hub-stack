@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "description": "Agent-hub-stack A/B benchmark: baseline (raw context) vs stack (sandbox/compress)",
+  "scenarios": [
+    {
+      "id": "git_log_summary",
+      "task": "How many commits are in the log and who is the most frequent author? Reply with JSON: {\"commit_count\": N, \"top_author\": \"name\"}",
+      "fixture": "git_log_500.txt",
+      "quality_checks": ["commit_count", "top_author"]
+    },
+    {
+      "id": "json_errors",
+      "task": "How many log entries have level ERROR or FATAL? Reply with JSON: {\"error_count\": N}",
+      "fixture": "access_log_500.jsonl",
+      "quality_checks": ["error_count"]
+    },
+    {
+      "id": "code_count",
+      "task": "How many .py files are under the scanned tree? Reply with JSON: {\"py_files\": N}",
+      "fixture": "file_tree.txt",
+      "quality_checks": ["py_files"]
+    }
+  ]
+}

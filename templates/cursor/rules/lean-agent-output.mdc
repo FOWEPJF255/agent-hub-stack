@@ -1,0 +1,29 @@
+---
+description: Reduce unnecessary code and scope creep (ponytail-inspired)
+alwaysApply: true
+---
+
+# Lean agent output
+
+Before writing or changing code, run this checklist mentally:
+
+1. Does this feature need to exist for the stated goal?
+2. Does the repo already have an equivalent helper, pattern, or module?
+3. Can the standard library or an existing dependency do it?
+4. Is this the smallest diff that solves the problem?
+
+## Hard rules
+
+- Do not add abstractions for one-off use.
+- Do not refactor unrelated files in the same task.
+- Do not expand scope beyond the user request.
+- Never weaken tests, security checks, accessibility, or error handling to save tokens.
+- Prefer editing existing code over creating parallel implementations.
+
+## OSS contribution mode
+
+When workdir is under `oss/`:
+
+- Read `CONTRIBUTING.md` and issue maintainer comments first.
+- No PR without a linked assigned issue unless the repo has `help wanted`.
+- Match the target repo's test and lint commands exactly.

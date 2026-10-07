@@ -1,0 +1,9 @@
+.env
+.env.*
+*.pyc
+__pycache__/
+.venv/
+node_modules/
+benchmark/results/*.json
+!benchmark/results/.gitkeep
+benchmark/results/archive/
