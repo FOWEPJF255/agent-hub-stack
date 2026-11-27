@@ -80,7 +80,7 @@ def stack_preprocess(fixture_name: str, raw: str) -> tuple[str, int, int]:
                 row = json.loads(line)
             except json.JSONDecodeError:
                 continue
-            if row.get("level") in ("ERROR", "FATAL"):
+            if isinstance(row, dict) and row.get("level") in ("ERROR", "FATAL"):
                 err += 1
         summary = json.dumps({"error_count": err, "lines": len(raw.splitlines())})
     elif "file_tree" in name:
