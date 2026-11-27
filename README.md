@@ -43,6 +43,18 @@ Skill: `.cursor/skills/agent-hub-stack/SKILL.md` — trigger: `/stack`, `省toke
 
 ## Benchmark
 
+### Offline preprocessing checks
+
+From the repository root, run:
+
+```powershell
+python -B -m unittest discover -s benchmark -p test_preprocess.py -v
+```
+
+This command uses Python's standard library and the checked-in fixtures. It compares local summaries with the benchmark ground truth and checks that reported sizes count UTF-8 bytes. The access-log summary counts ERROR and FATAL object records. Malformed JSON and other JSON values are skipped, and the total line count still includes skipped lines.
+
+### Remote model A/B benchmark
+
 Uses `AGENT_API_KEY` / `DEEPSEEK_API_KEY` from env or `../AES/.env`.
 
 ```powershell
